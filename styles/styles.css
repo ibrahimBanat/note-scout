@@ -4,12 +4,34 @@
 
 :root {
   --logo: rgb(78, 66, 212);
+  --hover: rgb(48, 26, 172);
   --back: #dddddc;
   --white: #fff;
   --text: rgb(95, 95, 95);
   --cursive: 'Architects Daughter', cursive;
   --gorditas: 'Gorditas', cursive;
   --logo-reverse: rgb(255, 56, 89);
+}
+
+/** Scrollbar **/
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 50px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--white);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--logo);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--hover);
 }
 
 /** scafolde **/
@@ -138,19 +160,11 @@ main {
 }
 .div3 {
   grid-area: 5 / 3 / 7 / 5;
+  grid-row: auto;
 }
 .div4 {
   grid-area: 7 / 3 / 9 / 5;
-}
-
-.div1 {
-  background: slateblue;
-}
-.div3 {
-  background: tomato;
-}
-.div4 {
-  background: violet;
+  grid-row: auto;
 }
 
 /** form **/
@@ -311,4 +325,12 @@ footer {
   grid-area: footer;
   background-color: var(--white);
   border-top: 1px solid;
+}
+
+.m--n-s {
+  background-color: var(--logo);
+  color: var(--white);
+  padding: 8px 12px;
+
+  border-radius: 30% 70% 67% 33% / 30% 30% 70% 70%;
 }
