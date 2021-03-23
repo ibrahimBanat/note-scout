@@ -325,13 +325,34 @@ input[type='text'] {
 footer {
   grid-area: footer;
   background-color: var(--white);
-  border-top: 1px solid;
-}
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.my--name {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--cursive);
+  color: var(--logo);
+  font-weight: 600;
+}
+.social--d {
+  display: flex;
+  gap: 20px;
+}
 .m--n-s {
   background-color: var(--logo);
   color: var(--white);
   padding: 8px 12px;
 
   border-radius: 30% 70% 67% 33% / 30% 30% 70% 70%;
+}
+
+.social--link {
+  color: var(--logo);
+  font-size: 28px;
 }
