@@ -61,6 +61,9 @@ $('.label').on('click', function () {
   $('#labels').append(
     `<div class="added"><div class="added--text">${label}</div><span class="remove">X</span></div>`
   );
+  $('.remove').on('click', function () {
+    $(this).parent().remove();
+  });
 });
 
 $('#inputLabel').keypress(function (event) {
@@ -79,8 +82,4 @@ $('#inputLabel').keypress(function (event) {
     });
   }
 });
-
-$('.remove').on('click', function () {
-  console.log('ayooooooooooooo');
-  $(this).parent().remove();
-});
+console.log('line82');
