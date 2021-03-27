@@ -51,8 +51,6 @@ $('#trash').click(function () {
 });
 
 $('.span1, .span2, .span3, .span4').click(function (event) {
-  // console.log($(`${event.target.}`).css('background-color'));
-
   let cardBackground = $(this).css('background-color');
   $('.inpt--ctr').css('background-color', cardBackground);
 });
@@ -83,3 +81,4 @@ $('#inputLabel').keypress(function (event) {
   }
 });
 console.log('line82');
+function render() {}
