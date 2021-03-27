@@ -7,7 +7,7 @@
   --hover: rgb(48, 26, 172);
   --back: #dddddc;
   --white: #fff;
-  --text: rgb(95, 95, 95);
+  --text: #333;
   --cursive: 'Architects Daughter', cursive;
   --gorditas: 'Gorditas', cursive;
   --logo-reverse: rgb(255, 56, 89);
@@ -352,6 +352,64 @@ input[type='text'] {
 
 .div2 input::placeholder {
   text-align: center;
+}
+
+#pinnedCards {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.note-card {
+  width: 200px;
+  padding: 5px;
+  /* background: aliceblue; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200px;
+  /* height: 200px; */
+  margin-bottom: 10px;
+  padding: 50px 20px 50px 20px;
+  border-radius: 5px;
+  border: 1px solid var(--logo);
+  /* overflow-y: hidden; */
+}
+.heading {
+  display: flex;
+  justify-content: space-between;
+}
+.heading h2 {
+  font-size: 18px;
+  color: var(--text);
+}
+.pinning {
+  color: var(--logo);
+  cursor: pointer;
+}
+.content {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin: 20px 0px;
+}
+#trashed {
+  color: var(--logo);
+}
+.trashed {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+.pinned-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.other-ctr {
+  text-align: center;
+}
+#other-cards {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 /** Footer **/
