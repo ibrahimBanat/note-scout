@@ -2,20 +2,30 @@
 
 // constructor
 
-const Note = function (title, noteText, isPinned, background) {
+const Note = function (title, noteText, isPinned, background, label) {
   this.title = title;
   this.noteText = noteText;
   this.isPinned = isPinned;
   this.background = background;
-  Note.all.push(this);
+  this.label = label;
+  if (isPinned === 'true') {
+    Note.pinned.push(this);
+  } else {
+    Note.other.push(this);
+  }
 };
-Note.all = [];
+Note.other = [];
+Note.pinned = [];
 Note.prototype.addToLocalStorage = function () {
-  localStorage.setItem('Notes', JSON.stringify(Note.all));
+  localStorage.setItem('pinned', JSON.stringify(Note.pinned));
+  localStorage.setItem('other', JSON.stringify(Note.other));
 };
 
-if (localStorage.getItem('Notes')) {
-  Note.all = JSON.parse(localStorage.getItem('Notes'));
+if (localStorage.getItem('pinned')) {
+  Note.pinned = JSON.parse(localStorage.getItem('pinned'));
+}
+if (localStorage.getItem('other')) {
+  Note.other = JSON.parse(localStorage.getItem('other'));
 }
 
 $('#form').on('submit', function (event) {
@@ -25,10 +35,11 @@ $('#form').on('submit', function (event) {
   let text = $('#note').val();
   let pin = $('#pin').attr('clicked');
   let background = $('.inpt--ctr').css('background-color');
-  console.log(title, text, pin, background);
+  let labelTemp = $('#labels').children().text().split('X');
+  let labels = labelTemp.slice(0, labelTemp.length - 1);
+  console.log(title, text, pin, background, labels);
   $('#form').trigger('reset');
-  let note = new Note(title, text, pin, background);
-  console.log(Note.all);
+  let note = new Note(title, text, pin, background, labels);
   note.addToLocalStorage();
 });
 
@@ -80,5 +91,27 @@ $('#inputLabel').keypress(function (event) {
     });
   }
 });
-console.log('line82');
-function render() {}
+function addLabels(index) {
+  if (Note.pinned[index].label.length != '0') {
+    for (let i = 0; i < Note.pinned[index].label.length; i++) {
+      $('.labels-area').append(
+        `<div class="label-item"><h1>${Note.pinned[index].label[i]}</h1></div>`
+      );
+    }
+  }
+}
+
+console.log(Note.pinned);
+function renderPinned() {
+  for (let index = 0; index < Note.pinned.length; index++) {
+    $('#pinnedCards').append(`<div class="note-card">
+    <div class="heading"><h2>${Note.pinned[index].title}</h2></div>
+    <div class="content">${Note.pinned[index].noteText}</div>
+    <div class="labels-area">${addLabels(index)}</div>
+    <div class="trashed">
+                    <ion-icon name="trash-outline" size="large" id="trashed" role="img" class="md icon-large hydrated" aria-label="trash outline"></ion-icon>
+                  </div>
+    </div>`);
+  }
+}
+renderPinned();
