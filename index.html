@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -61,15 +62,17 @@
                   placeholder="Title"
                   id="title"
                   autocomplete="off"
+                  required
                 />
                 <input
                   type="text"
                   placeholder="Take a Note"
                   id="note"
                   autocomplete="off"
+                  required
                 />
               </div>
-              <div id="label"></div>
+              <div id="labels"></div>
 
               <div id="acc-ft-cont">
                 <div class="bg-sn-ctr">
@@ -96,12 +99,27 @@
             </form>
           </div>
           <div class="div2">
-            <input type="text" placeholder="Label" />
-            <input type="text" value="Todo" />
-            <input type="text" value="Insparition" />
-            <input type="text" value="Random" />
-            <input type="text" value="Personal" />
-            <input type="text" value="Work" />
+            <input type="text" placeholder="Label" id="inputLabel" />
+            <div class="label">
+              <ion-icon name="ticket-outline"></ion-icon>
+              <span class="labelInner">Todo</span>
+            </div>
+            <div class="label">
+              <ion-icon name="ticket-outline"></ion-icon>
+              <span class="labelInner">Insparition</span>
+            </div>
+            <div class="label">
+              <ion-icon name="ticket-outline"></ion-icon>
+              <span class="labelInner">Random</span>
+            </div>
+            <div class="label">
+              <ion-icon name="ticket-outline"></ion-icon>
+              <span class="labelInner">Personal</span>
+            </div>
+            <div class="label">
+              <ion-icon name="ticket-outline"></ion-icon>
+              <span class="labelInner">Work</span>
+            </div>
           </div>
           <div class="div3">
             <div id="pinned"></div>
