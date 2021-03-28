@@ -3,11 +3,11 @@
 /* rgb(118,118,118) font  */
 
 :root {
-  --logo: rgb(78, 66, 212);
+  --logo: darkblue;
   --hover: rgb(48, 26, 172);
   --back: #dddddc;
   --white: #fff;
-  --text: rgb(95, 95, 95);
+  --text: #333;
   --cursive: 'Architects Daughter', cursive;
   --gorditas: 'Gorditas', cursive;
   --logo-reverse: rgb(255, 56, 89);
@@ -54,7 +54,8 @@
 header {
   /* background-color: cyan; */
   grid-area: header;
-  border-bottom: 1px solid rgba(0, 0, 0, 8%);
+  /* border-bottom: 1px solid rgba(0, 0, 0, 8%); */
+  box-shadow: inset 1px 1px 0 rgb(0 0 0 / 10%), inset 0 -1px 0 rgb(0 0 0 / 7%);
 }
 
 .icon {
@@ -226,15 +227,37 @@ main {
 input[type='text'] {
   color: var(--text);
 }
-
+#labels {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 5px;
+  flex-wrap: wrap;
+}
+.added {
+  display: inline-flex;
+  /* width: 50px; */
+  justify-content: space-between;
+  width: 60px;
+  border: 1px solid;
+  padding: 5px 10px;
+  color: var(--logo);
+  font-family: 'Gorditas';
+  min-width: 120px;
+}
+.added span {
+  color: red;
+  cursor: pointer;
+}
 /** form--spans **/
 .span1 {
   width: 20px;
   height: 20px;
-  background: #d126b3;
+  background: #2ab7ca;
   display: inline-block;
   border-radius: 50%;
-  color: #d126b3;
+  color: transparent;
   cursor: pointer;
 }
 .span2 {
@@ -243,25 +266,25 @@ input[type='text'] {
   background: #f9f871;
   display: inline-block;
   border-radius: 50%;
-  color: #f9f871;
+  color: transparent;
   cursor: pointer;
 }
 .span3 {
   width: 20px;
   height: 20px;
-  background: #c6fced;
+  background: #feb2a8;
   display: inline-block;
   border-radius: 50%;
-  color: #c6fced;
+  color: transparent;
   cursor: pointer;
 }
 .span4 {
   width: 20px;
   height: 20px;
-  background: #ff4185;
+  background: #7bc043;
   display: inline-block;
   border-radius: 50%;
-  color: #ff4185;
+  color: transparent;
   cursor: pointer;
 }
 .btn--dlt {
@@ -308,16 +331,104 @@ input[type='text'] {
 }
 
 /** labels area **/
-.div2 input {
+.div2 .label,
+.div2 input,
+.div2 .label1 {
   width: 140px;
   height: 50px;
   margin: 5px 10px 5px 0px;
   border: none;
-  border-bottom: 4px solid #d126b3;
+  border-bottom: 4px solid var(--logo);
   border-radius: 5px;
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 18px;
+  color: var(--logo);
+  font-family: cursive;
+  cursor: pointer;
 }
+
 .div2 input::placeholder {
-  margin-left: 25px !important;
+  text-align: center;
+}
+
+#pinnedCards {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.note-card {
+  width: 200px;
+  padding: 5px;
+  /* background: aliceblue; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200px;
+  /* height: 200px; */
+  margin-bottom: 10px;
+  padding: 50px 20px 50px 20px;
+  border-radius: 5px;
+  border: 1px solid var(--logo);
+  /* overflow-y: hidden; */
+}
+.heading {
+  display: flex;
+  justify-content: space-between;
+}
+.heading h2 {
+  font-size: 18px;
+  color: var(--text);
+}
+.pinning {
+  color: var(--logo);
+  cursor: pointer;
+}
+.content {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin: 20px 0px;
+  min-height: 50px;
+}
+#trashed {
+  color: var(--logo);
+}
+.trashed {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+.pinned-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 22px;
+  color: var(--text);
+}
+.other-ctr {
+  text-align: center;
+  font-size: 22px;
+  color: var(--text);
+  margin-bottom: 30px;
+}
+#other-cards {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.label-item {
+  /* display: inline; */
+  display: inline-flex;
+  color: var(--logo);
+  font-size: 18px;
+  padding: 5px 5px;
+  border: 1px solid var(--logo);
+}
+.labels-area {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
 }
 
 /** Footer **/

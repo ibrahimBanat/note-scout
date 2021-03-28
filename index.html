@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -61,15 +62,17 @@
                   placeholder="Title"
                   id="title"
                   autocomplete="off"
+                  required
                 />
                 <input
                   type="text"
                   placeholder="Take a Note"
                   id="note"
                   autocomplete="off"
+                  required
                 />
               </div>
-              <div id="label"></div>
+              <div id="labels"></div>
 
               <div id="acc-ft-cont">
                 <div class="bg-sn-ctr">
@@ -96,18 +99,98 @@
             </form>
           </div>
           <div class="div2">
-            <input type="text" placeholder="Label" />
-            <input type="text" value="Todo" />
-            <input type="text" value="Insparition" />
-            <input type="text" value="Random" />
-            <input type="text" value="Personal" />
-            <input type="text" value="Work" />
+            <input type="text" placeholder="Label" id="inputLabel" />
+            <div class="label">
+              <ion-icon name="ticket-outline"></ion-icon>
+              <span class="labelInner">Todo</span>
+            </div>
+            <div class="label">
+              <ion-icon name="ticket-outline"></ion-icon>
+              <span class="labelInner">Insparition</span>
+            </div>
+            <div class="label">
+              <ion-icon name="ticket-outline"></ion-icon>
+              <span class="labelInner">Random</span>
+            </div>
+            <div class="label">
+              <ion-icon name="ticket-outline"></ion-icon>
+              <span class="labelInner">Personal</span>
+            </div>
+            <div class="label">
+              <ion-icon name="ticket-outline"></ion-icon>
+              <span class="labelInner">Work</span>
+            </div>
           </div>
           <div class="div3">
-            <div id="pinned"></div>
+            <div id="pinned">
+              <div class="pinned-title">Pinned Notes</div>
+              <div id="pinnedCards">
+                <div class="note-card">
+                  <div class="heading">
+                    <h2>Corona</h2>
+                    <ion-icon
+                      name="pin"
+                      size="large"
+                      class="pinning"
+                    ></ion-icon>
+                  </div>
+                  <div class="content">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Quasi, modi! Lorem ipsum dolor sit amet, consectetur
+                    adipisicing elit. Dignissimos iusto perferendis autem
+                    aperiam! Corporis
+                  </div>
+                  <div class="trashed">
+                    <ion-icon
+                      name="trash-outline"
+                      size="large"
+                      id="trashed"
+                    ></ion-icon>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="div4">
-            <div id="other"></div>
+            <div id="other">
+              <div class="other-ctr">Other Notes</div>
+              <div id="other-cards">
+                <div class="note-card">
+                  <div class="heading">
+                    <h2>Corona</h2>
+                    <ion-icon
+                      name="pin"
+                      size="large"
+                      class="pinning"
+                    ></ion-icon>
+                  </div>
+                  <div class="content">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Quasi, modi! Lorem ipsum dolor sit amet, consectetur
+                    adipisicing elit. Dignissimos iusto perferendis autem
+                    aperiam! Corporis
+                  </div>
+                  <div class="labels-area">
+                    <div class="label-item">
+                      <h1>Insparition</h1>
+                    </div>
+                    <div class="label-item">
+                      <h1>Insparition</h1>
+                    </div>
+                    <div class="label-item">
+                      <h1>Insparition</h1>
+                    </div>
+                  </div>
+                  <div class="trashed">
+                    <ion-icon
+                      name="trash-outline"
+                      size="large"
+                      id="trashed"
+                    ></ion-icon>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </main>
